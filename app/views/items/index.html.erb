@@ -1,0 +1,15 @@
+<h1 class="current_category"><%= params[:category]%> </h1>
+
+<% if @items.count == 0 %> 
+
+	<h1> В этой категории нет постов </h1> 
+
+<% else %>
+
+	<% @items.each do |item|%>
+	<h2> <%=link_to item.title, item_path(item) %></h2> 
+	<% end %>
+	
+<% end %>
+
+

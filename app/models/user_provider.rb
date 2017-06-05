@@ -4,6 +4,9 @@ class UserProvider < ActiveRecord::Base
 
     def self.find_for_facebook_oauth(auth)
 
+      puts "Response from FB API"
+      puts auth
+
         user = UserProvider.where(:provider => auth.provider, :uid => auth.uid).first
         unless user.nil?
             user.user
